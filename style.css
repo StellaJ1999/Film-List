@@ -11,57 +11,129 @@ body {
     height: 100vh;
     width: 100vw;
     background: linear-gradient(135deg, rgb(212, 138, 217), rgb(255, 214, 89));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 #wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
+
+    width: 70%;
     border-radius: 10px;
     box-sizing: border-box;
     overflow: hidden;
-    border: 2px solid rgb(255, 127, 232);
+    border: 2px solid #ff7fe8;
     padding: 2rem;
     margin: 5rem;
     gap: 3vh;
-    background-color: antiquewhite;
+    background-color: #faebd7;
 
 }
 
 h1 {
     padding-bottom: 2rem;
     color: rgb(255, 127, 232);
+    text-align: center;
+}
+
+#add, #search:focus {
+    outline: none;
 }
 
 #search-films {
     border: none;
-
 }
 
 #add-film {
     border: none;
-    text-align: center;
 }
 
+
 input {
-    border-color: #ff7fe8;
+    border: 2px solid #ff7fe8;
     padding: 0.2rem;
     border-radius: 5px;
+    width: 50%%;
 }
 
 input:focus {
-    border-color: rgb(255, 127, 232);
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    border: 2px solid rgb(255, 211, 157);
+}
+
+ul li {
+    list-style: none;
+    font-size: 130%;
+    color: #ff57e0;
+    padding: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li {
+    background-color: #ffe4c4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 2px solid #ff7fe8;
+    border-radius: 50px;
 }
 
 button {
     padding: 0.15rem;
-    border-color: #ff7fe8;
+    border: 2px solid #ff7fe8;
     border-radius: 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: rgb(255, 237, 214);
+    background: #ffedd6;
     -webkit-text-fill-color: #ff5de1;
     width: 3.8rem;
+    cursor: pointer;
+}
+
+button:active {
+    border: 2px solid #ffaadc;
+}
+
+
+.delete-button {
+    width: 2rem;
+    padding-top: 1vh;
+    margin-right: 2vh;
+    cursor: pointer;
+}
+
+.custom-checkbox {
+    border: 2px solid #ff57e0;
+    border-radius: 400px;
+    min-width: 2rem;
+    min-height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 300ms ease;
+    cursor: pointer;
+}
+
+.custom-checkbox svg {
+    fill: #ff57e0;
+}
+
+.custom-checkbox:active {
+    border: 2px solid #ffaadc;
+}
+
+
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #ffaadc;
+    border: 2px solid #ffaadc;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox svg{
+    fill: antiquewhite;
+}
+
+input[type="checkbox"]:checked ~ .todo-text {
+    text-decoration: line-through;
+    color: #ffaadc;
+}
+
+input[type="checkbox"] {
+    display: none;
 }
